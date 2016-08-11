@@ -1,9 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "RScanner.h";
+#include "RScanner.h"
+#include "acciones.h"
+
+
 
 int main()
 {
+
+
+
         printf("----------------------------Archivos 1.0/\n");
         printf("----------------------------------------/\n");
         printf("Comando para salir: Salir/\n");

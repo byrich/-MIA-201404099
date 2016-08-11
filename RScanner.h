@@ -52,8 +52,31 @@ void Ejecutarcomando(char *Listacomandos, char *Comando){
                 token = strtok(NULL, " ");
                 if (token[0] == ':'){
                 memmove(token, token+1, strlen(token));
+                       strcpy(Name, token);
+
                 }
-                strcpy(Name,token);
+                int i=0;
+                char b='f';
+                for(i=0;i<strlen(token);i++){
+                    if(token[i]=='.'){
+                        token = strtok(token, ".");
+                        token = strtok(NULL, " ");
+                        if(strcasecmp(token,"dsk")==0){
+
+                        }else{
+                            printf("Debe poner dsk.\n");
+                            break;
+                        }
+                        b='h';
+                        break;
+                    }
+                }
+                if(b=='h'){
+
+                }else{
+                    printf("NO puso la extension\n");
+                    break;
+                }
             }else if(strcasecmp(token,"-size")==0){
                 token = strtok(NULL, " ");
                 if (token[0] == ':'){
@@ -206,5 +229,7 @@ void Ejecutarcomando(char *Listacomandos, char *Comando){
             }
 
         }
+    }else{
+        printf("Error: El sistema no reconoce el comando\n");
     }
 }
